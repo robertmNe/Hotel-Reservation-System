@@ -32,6 +32,8 @@ class Date{
     int getDay() const;
     int getYear() const;
 
+    // Functions
+    void printDate () const;
 };
 
 #endif
