@@ -11,11 +11,11 @@ dateOfBirth()
     lastName[0] = '\0';
 }
 // Parameter constructor
-Information::Information(const char* fn, const char* ln, Date dob): 
-dateOfBirth(dob) 
+Information::Information(const char* fn, const char* ln, Date dob)
 {
-    // Copying the first and last names onto the arrays
+    dateOfBirth = dob;
 
+    // Copying the first and last names onto the arrays
     int i = 0;
 
     for (i = 0; fn[1]!= '\0' && fn[1]<49; i++) {
