@@ -12,25 +12,25 @@ class Guest{
 
     Date checkIn;
     Date checkOut;
-    Information storeInfo[3];
+    Information guestInfo[3];
     int roomNumber;
 
     public:
     // Default constructor
     Guest();
     // Parameter constructor
-    Guest (Date ci, Date co, Information si, int rn);
+    Guest(Date ci, Date co, Information gi, int rn);
 
     // Setters
     void setCheckIn (Date ci);
     void setCheckOut (Date co);
-    void setStoreInfo (Information si);
+    void setGuestInfo (Information gi);
     void setRoomNumber (int rn);
 
     // Getters
     Date getCheckIn() const;
     Date getCheckOut() const;
-    Information getStoreInfo() const;
+    Information getGuestInfo() const;
     int getRoomNumber() const;
 
     //Functions
@@ -39,4 +39,3 @@ class Guest{
 };
 
 #endif
-
