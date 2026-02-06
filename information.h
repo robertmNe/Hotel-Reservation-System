@@ -1,4 +1,4 @@
-#ifndef INFORMATION_H
+ifndef INFORMATION_H
 #define INFORMATION_H
 #include "date.h"
 #include <iostream>
@@ -32,7 +32,7 @@ class Information{
     Date getDateOfBirth() const;
 
     //Functions
-    void printDateOfBirth() const;
+    void printInformation() const;
 
 };
 
