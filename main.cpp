@@ -17,9 +17,9 @@ int main() {
     Guest_Res_Request* req1 = new Guest_Res_Request(guest1, 2);
     int resID1 = manager.processReservation(req1);
     if (resID1 != -1) {
-        cout << "Reservation successful! ID: " << resID1 << endl;
+        cout << "Reservation was successful. ID: " << resID1 << endl;
     } else {
-        cout << "Reservation failed!" << endl;
+        cout << "Reservation failed." << endl;
     }
     
     // case 2
@@ -32,9 +32,9 @@ int main() {
     Guest_Res_Request* req2 = new Guest_Res_Request(guest2, 4);
     int resID2 = manager.processReservation(req2);
     if (resID2 != -1) {
-        cout << "Reservation successful! ID: " << resID2 << endl;
+        cout << "Reservation was successful. ID: " << resID2 << endl;
     } else {
-        cout << "Reservation failed!" << endl;
+        cout << "Reservation failed." << endl;
     }
     
     // case 3
@@ -47,9 +47,9 @@ int main() {
     Guest_Res_Request* req3 = new Guest_Res_Request(guest3, 2);
     int resID3 = manager.processReservation(req3);
     if (resID3 != -1) {
-        cout << "Reservation successful! ID: " << resID3 << endl;
+        cout << "Reservation was successful. ID: " << resID3 << endl;
     } else {
-        cout << "Reservation failed! Room not available." << endl;
+        cout << "Reservation failed. Room is booked." << endl;
     }
     
     // case 4
@@ -64,15 +64,15 @@ int main() {
     Guest_Res_Request* req4 = new Guest_Res_Request(guest4, 3);
     int resID4 = manager.processReservation(req4);
     if (resID4 != -1) {
-        cout << "Reservation successful! ID: " << resID4 << endl;
+        cout << "Reservation was successful. ID: " << resID4 << endl;
     } else {
-        cout << "Reservation failed!" << endl;
+        cout << "Reservation failed." << endl;
     }
     
     // display all reservations
     manager.printGrid();
     
-    // get reservation details
+    // MF: fetch details from some reservation ID
     cout << "\n--- retrieving details for reservation ID 2 ---" << endl;
     manager.getReservationDetails(2);
     
@@ -91,9 +91,9 @@ int main() {
     Guest_Res_Request* req5 = new Guest_Res_Request(guest5, 2);
     int resID5 = manager.processReservation(req5);
     if (resID5 != -1) {
-        cout << "Reservation successful! ID: " << resID5 << endl;
+        cout << "Reservation was successful. ID: " << resID5 << endl;
     } else {
-        cout << "Reservation failed!" << endl;
+        cout << "Reservation failed." << endl;
     }
     
     manager.printGrid();
@@ -108,9 +108,9 @@ int main() {
     Guest_Res_Request* req6 = new Guest_Res_Request(guest6, 7);
     int resID6 = manager.processReservation(req6);
     if (resID6 != -1) {
-        cout << "Reservation successful! ID: " << resID6 << endl;
+        cout << "Reservation was successful. ID: " << resID6 << endl;
     } else {
-        cout << "Reservation failed!" << endl;
+        cout << "Reservation failed." << endl;
     }
     
     // case 7
