@@ -15,20 +15,27 @@ class Guest_Res_Request{
 
     public:
 
-    // Default constructor
+    // default constructor
     Guest_Res_Request();
-    // Parameter constructor
-    Guest_Res_Request (int rid, int non, const Guest& v);
 
-    // Setters
+    // parameter constructor
+    Guest_Res_Request (const Guest& v, int non);
+
+    // destructor
+    ~Guest_Res_Request();
+
+    // setters
     void setReservationID (int rid);
     void setNumOfNights (int non);
-    void setVisitors (Guest v);
+    void setVisitors (const Guest& v);
 
-    // Getters
-    int getReservationID () const;
-    int getNumOfNights () const;
-    Guest getVisitors () const;
+    // getters
+    int getReservationID() const;
+    int getNumOfNights() const;
+    Guest getVisitors() const;
+
+    // print function
+    void print() const;
 
 };
 
