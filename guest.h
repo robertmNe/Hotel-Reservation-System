@@ -12,31 +12,37 @@ class Guest{
 
     Date checkIn;
     Date checkOut;
-    Information guestInfo[3];
+    Information guestInfo[4];
     int roomNumber;
     int numOfGuest;
 
     public:
-    // Default constructor
+
+    // default constructor
     Guest();
-    // Parameter constructor
+
+    // parameter constructor
     Guest(Date ci, Date co, Information gi[], int rn, int nog);
 
-    // Setters
+    // destructor
+    ~Guest();
+
+    // setters
     void setCheckIn (Date ci);
     void setCheckOut (Date co);
     void setGuestInfo (Information gi);
+    void addGuest(const Information& gi);
     void setRoomNumber (int rn);
     void setNumOfGuest (int nog);
 
-    // Getters
+    // getters
     Date getCheckIn() const;
     Date getCheckOut() const;
-    Information getGuestInfo() const;
+    Information* getGuestInfo();
     int getRoomNumber() const;
-    int getNumOfGuest;
+    int getNumOfGuest() const;
 
-    //Functions
+    // functions
     void toString() const;
 
 };
