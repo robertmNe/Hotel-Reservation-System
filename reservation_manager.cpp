@@ -5,7 +5,7 @@ using namespace std;
 
 //constructor
 Reservation_Manager::Reservation_Manager() : arrSize(0) {
-    // Initialize the reservation grid to 0 (all spots empty)
+    // make all spots empty
     for (int i = 0; i < max_no_of_nights; i++) {
         for (int j = 0; j < no_of_rooms; j++) {
             reservationGrid[i][j] = 0;
@@ -15,7 +15,7 @@ Reservation_Manager::Reservation_Manager() : arrSize(0) {
 
 //destructor
 Reservation_Manager::~Reservation_Manager() {
-    // Delete all dynamically allocated Guest_Res_Request objects
+    // delete all dynamically allocated Guest_Res_Request objects
     for (int i = 0; i < arrSize; i++) {
         delete arr[i];
     }
