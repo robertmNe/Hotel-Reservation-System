@@ -3,7 +3,7 @@
 #include <iomanip>
 using namespace std;
 
-// Constructor
+//constructor
 Reservation_Manager::Reservation_Manager() : arrSize(0) {
     // Initialize the reservation grid to 0 (all spots empty)
     for (int i = 0; i < max_no_of_nights; i++) {
@@ -13,7 +13,7 @@ Reservation_Manager::Reservation_Manager() : arrSize(0) {
     }
 }
 
-// Destructor
+//destructor
 Reservation_Manager::~Reservation_Manager() {
     // Delete all dynamically allocated Guest_Res_Request objects
     for (int i = 0; i < arrSize; i++) {
@@ -21,49 +21,49 @@ Reservation_Manager::~Reservation_Manager() {
     }
 }
 
-// Process a reservation request
+//process a reservation req
 int Reservation_Manager::processReservation(Guest_Res_Request* request) {
     Guest guests = request->getVisitors();
     int roomNum = guests.getRoomNumber();
     int checkInDay = guests.getCheckIn().getDay();
     int nights = request->getNumOfNights();
     
-    // Validate room number
+    //validates room number
     if (roomNum < 1 || roomNum > no_of_rooms) {
         delete request;
         return -1;
     }
     
-    // Check if room is available for all nights
+    //check if room is available for all nights
     for (int night = checkInDay - 1; night < checkInDay - 1 + nights; night++) {
-        // Check bounds
+        //check bounds
         if (night < 0 || night >= max_no_of_nights) {
             delete request;
             return -1;
         }
-        // Check if room is already booked
+        //checks if a room is already booked
         if (reservationGrid[night][roomNum - 1] != 0) {
-            // Room not available, delete request
+            //if it isnt, deletes request
             delete request;
             return -1;
         }
     }
     
-    // Room is available for all nights, add reservation
+    //room is available, adds reservation
     int resID = request->getReservationID();
     
-    // Mark the room as reserved in the grid
+    //marks reservation in the grid 
     for (int night = checkInDay - 1; night < checkInDay - 1 + nights; night++) {
         reservationGrid[night][roomNum - 1] = resID;
     }
     
-    // Add request to the array
+    //adds the req to array
     arr[arrSize++] = request;
     
     return resID;
 }
 
-// Get reservation details by ID
+//fetch details from a reservation ID
 void Reservation_Manager::getReservationDetails(int resID) const {
     for (int i = 0; i < arrSize; i++) {
         if (arr[i]->getReservationID() == resID) {
@@ -75,27 +75,27 @@ void Reservation_Manager::getReservationDetails(int resID) const {
     cout << "Reservation ID " << resID << " not found." << endl;
 }
 
-// Cancel a reservation by ID
+//cancel a reservation by ID 
 void Reservation_Manager::cancelReservation(int resID) {
     for (int i = 0; i < arrSize; i++) {
         if (arr[i]->getReservationID() == resID) {
-            // Remove from grid
+            //removes from grid
             Guest guests = arr[i]->getVisitors();
             int roomNum = guests.getRoomNumber();
             int checkInDay = guests.getCheckIn().getDay();
             int nights = arr[i]->getNumOfNights();
             
-            // Clear the reservation from the grid
+            //clear reservation from grid 
             for (int night = checkInDay - 1; night < checkInDay - 1 + nights; night++) {
                 if (night >= 0 && night < max_no_of_nights) {
                     reservationGrid[night][roomNum - 1] = 0;
                 }
             }
             
-            // Delete the object
+            //deletes the object
             delete arr[i];
             
-            // Shift remaining elements left in the array
+            //shift elements in array left 
             for (int j = i; j < arrSize - 1; j++) {
                 arr[j] = arr[j + 1];
             }
@@ -108,18 +108,18 @@ void Reservation_Manager::cancelReservation(int resID) {
     cout << "Reservation ID " << resID << " not found." << endl;
 }
 
-// Print the reservation grid
+//print the grid 
 void Reservation_Manager::printGrid() const {
     cout << "\n=== Reservation Grid ===" << endl;
     cout << "     ";
     
-    // Print room numbers header
+    //print room numbers
     for (int i = 1; i <= no_of_rooms; i++) {
         cout << setw(3) << i;
     }
     cout << endl;
     
-    // Print each day (March 1 to March 7)
+    //prints each day 
     for (int i = 0; i < max_no_of_nights; i++) {
         cout << "Mar " << (i + 1) << " ";
         for (int j = 0; j < no_of_rooms; j++) {
@@ -129,7 +129,7 @@ void Reservation_Manager::printGrid() const {
     }
 }
 
-// Print function
+//print function
 void Reservation_Manager::print() const {
     printGrid();
 }
