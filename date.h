@@ -21,6 +21,8 @@ class Date{
     Date(int m, int d, int y);
     // copy constructor
     Date(const Date &other);
+    // destructor
+    ~Date();
 
     // setters 
     void setMonth (int m);
@@ -32,8 +34,9 @@ class Date{
     int getDay() const;
     int getYear() const;
 
-    // Functions
+    // functions
     void printDate () const;
 };
 
 #endif
+
