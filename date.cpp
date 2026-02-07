@@ -28,6 +28,32 @@ Date::Date(const Date &other)
 // Destructor
 Date::~Date(){}
 
+// Setters
+void Date::setMonth(int m) {
+    month = m;
+}
+
+void Date::setDay(int d) {
+    day = d;
+}
+
+void Date::setYear(int y) {
+    year = y;
+}
+
+// Getters
+int Date::getMonth() const {
+    return month;
+}
+
+int Date::getDay() const {
+    return day;
+}
+
+int Date::getYear() const {
+    return year;
+}
+
 void Date::printDate() const {
     cout << month << "/" << day << "/" << year;
 }
