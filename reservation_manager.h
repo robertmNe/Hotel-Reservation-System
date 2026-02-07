@@ -1,11 +1,11 @@
-#ifndef reservation_manager_h
-#define reservation_manager_h
+#ifndef RESERVATION_MANAGER_H
+#define RESERVATION_MANAGER_H
 
 #include "guest_res_request.h"
 #include <iostream>
 using namespace std;
 
-class reservation_manager {
+class Reservation_Manager {
     
     private:
         
