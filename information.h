@@ -1,4 +1,4 @@
-ifndef INFORMATION_H
+#ifndef INFORMATION_H
 #define INFORMATION_H
 #include "date.h"
 #include <iostream>
@@ -20,6 +20,8 @@ class Information{
     Information();
     // Parameter constructor
     Information (const char* fn, const char* ln, Date dob);
+    // Destructor
+    ~Information();
 
     // Setters
     void setFirstName (const char* fn);
