@@ -22,5 +22,17 @@ Guest::Guest (Date ci, Date co, Information gi[], int rn, int ng)
 } 
 
 void Guest::toString()const {
-    // still to be done...
+    cout << "Room Number: " << roomNumber << endl;
+    cout << "Check-in Date: ";
+    checkIn.printDate();
+    cout << endl;
+    cout << "Check-out Date: ";
+    checkOut.printDate();
+    cout << endl;
+    cout << "Number of Guests: " << numOfGuest << endl;
+    for (int i = 0; i < numOfGuest; i++) {
+        cout << "Guest " << (i + 1) << " - ";
+        guestInfo[i].printInformation();
+        cout << endl;
+        }
 }
