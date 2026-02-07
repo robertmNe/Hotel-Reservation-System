@@ -16,9 +16,10 @@ class Reservation_Manager {
         int reservationGrid[max_no_of_nights][no_of_rooms];
         
     public:
-    
+        //constructor
         Reservation_Manager();
         
+        //destructor
         ~Reservation_Manager();
         
         int processReservation(Guest_Res_Request* request);
